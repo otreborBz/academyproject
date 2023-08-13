@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="Author" content="RobertoCarvalho" >
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/006642858d.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Projeto Academy</title>
+</head>
+<body>
+    <!-- CABEÇALHO -->
+    <header th:fragment="cabecalho">
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-image: linear-gradient(to top, #2068A3, rgb(169, 215, 241));">
+    
+          <a class="navbar-brand" th:href="@{/}" >
+            <img src="/img/logo.png" alt="Logo" width="100px">
+          </a>
+    
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navMobile">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+    
+          <div id="navMobile" class="collapse navbar-collapse justify-content-end" >
+    
+              <a class="btn-nav nav-item nav-link"><i class="fas fa-home"> Home</i></a>
+              <a class="btn-nav nav-item nav-link"><i class="fas fa-user-graduate"> Cadastrar Aluno</i> </a>
+              <a class="btn-nav nav-item nav-link"><i class="fas fa-search"> Pesquisar Aluno</i> </a>
+              <a class="nav-item nav-link btn-danger "><i class="fas fa-times"> Sair</i> </a>
+          </div>
+    
+        </nav>    
+    </header>
+    
+    <!-- FOOTER -->
+    <footer th:fragment="rodape">
+    <div class="rodape">
+        <span>Todos os Direitos Reservados - 2023 - &copy Roberto Carvalho </span>
+    </div>
+    </footer>
+    
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+
+</html>
