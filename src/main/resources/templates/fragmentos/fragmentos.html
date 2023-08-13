@@ -11,6 +11,8 @@
 </head>
 <body>
     <!-- CABEÇALHO -->
+    <!-- defino o thymeleaf que o header vai ser um fragmento dando uma nome para ele, neste
+    que neste caso é o cabeçalho -->
     <header th:fragment="cabecalho">
         <nav class="navbar navbar-expand-lg navbar-dark" style="background-image: linear-gradient(to top, #2068A3, rgb(169, 215, 241));">
     
@@ -23,7 +25,6 @@
           </button>
     
           <div id="navMobile" class="collapse navbar-collapse justify-content-end" >
-    
               <a class="btn-nav nav-item nav-link"><i class="fas fa-home"> Home</i></a>
               <a class="btn-nav nav-item nav-link"><i class="fas fa-user-graduate"> Cadastrar Aluno</i> </a>
               <a class="btn-nav nav-item nav-link"><i class="fas fa-search"> Pesquisar Aluno</i> </a>

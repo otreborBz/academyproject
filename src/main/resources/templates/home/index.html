@@ -10,38 +10,26 @@
     <title>Projeto Academy</title>
 </head>
 <body>
-
+  <!-- fragmento cabeçalho -->
   <div th:replace="fragmentos/fragmentos :: cabecalho"></div>
-
   <section class="neo-section" style="background-image: url('img/Asset 4.svg');">
-    <div class="sombra"></div>
-  <div class="neo-container center">
+    <div class="sombra"></div><!--Só faz a sombra na tela-->
+    <div class="neo-container center">
       <h1 class="texto-center">Sistemas de Gerenciamento de Alunos</h1>
-    
       <div class="botoes">
-
-      <div class="wm">
-        <h5 class="btn">CADASTRAR ALUNO</h5> 
-      </div>
-
-      <div class="wm">
-        <h5 class="btn justify-content-center">ENCONTRAR ALUNO</h5>
-      </div>
-
-      <div class="clear">
+        <div class="wm">
+          <h5 class="btn">CADASTRAR ALUNO</h5> 
+        </div>
+        <div class="wm">
+          <h5 class="btn justify-content-center">ENCONTRAR ALUNO</h5>
+        </div>
+        <div class="clear"></div>
       </div>
     </div>
-  </div>
-  
-</section>
-
-<div th:replace="fragmentos/fragmentos :: rodape"></div>
-
-
-
-
-
-
+  </section>
+<!-- th referece a thymeleaf onde ele vai entrar na pasta fragmentos, pegar o arquivo fragmentos e buscar 
+o pedaco do codigo que ele vai copiar que neste caso é o rodape  -->
+  <div th:replace="fragmentos/fragmentos :: rodape"></div>
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
