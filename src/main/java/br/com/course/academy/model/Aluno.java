@@ -29,7 +29,7 @@ public class Aluno {
 	private String matricula;
 	
 	@Column(name = "status")
-	@Enumerated(EnumType.STRING)
+	@Enumerated(EnumType.STRING)//mostra como deve ser salvo no banco de dados, nesse caso como string
 	private Status status;
 	
 
