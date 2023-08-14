@@ -92,6 +92,11 @@ a{
 
    
 }
+.btn-matricula{
+    margin-top: 10px; 
+    width: 100px;
+    padding: 5px;
+}
 /* RESPONSIVIDADE */
 @media Screen and (max-width: 667px){
     .wm{

@@ -12,6 +12,7 @@
 <body>
   <!-- fragmento cabeçalho -->
   <div th:replace="fragmentos/fragmentos :: cabecalho"></div>
+  
   <section class="neo-section" style="background-image: url('img/Asset 4.svg');">
     <div class="sombra"></div><!--Só faz a sombra na tela-->
     <div class="neo-container center">
@@ -27,6 +28,7 @@
       </div>
     </div>
   </section>
+  
 <!-- th referece a thymeleaf onde ele vai entrar na pasta fragmentos, pegar o arquivo fragmentos e buscar 
 o pedaco do codigo que ele vai copiar que neste caso é o rodape  -->
   <div th:replace="fragmentos/fragmentos :: rodape"></div>

@@ -11,7 +11,7 @@ public class HomeController {
 	@GetMapping("/")
 	 public ModelAndView index() {
 		 ModelAndView mv = new ModelAndView();//instancia o objeto Modelview
-		 mv.setViewName("home/index");//seta o nome 
+		 mv.setViewName("home/index");//mostra o caminho da pagina
 		 mv.addObject("msg", "mensagem vinda diretamente do controle");
 		 return mv;
 	 }
