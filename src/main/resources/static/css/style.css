@@ -97,6 +97,17 @@ a{
     width: 100px;
     padding: 5px;
 }
+.btn-td-listAluno{
+	display: flex;
+}
+
+.btn-listAluno{
+	margin-top: 10px; 
+    width: 100px;
+    padding: 5px;
+    margin: 0 auto;
+    text-align: center;
+}
 /* RESPONSIVIDADE */
 @media Screen and (max-width: 667px){
     .wm{

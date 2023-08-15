@@ -21,14 +21,20 @@
                 <th scope="col">Curso</th>
                 <th scope="col">Matricula</th>
                 <th scope="col">Status</th>
+                <th scope="col">Ação</th>
             </thead>
             <tbody>
                 <tr scope="row" th:each="alunos : ${alunosList}">
 					<td th:text="${alunos.nome}"></td>
 					<td th:text="${alunos.curso}"></td>
 					<td th:text="${alunos.matricula}"></td>
-					<td th:text="${alunos.status}"></td>
-        
+					<td th:text="${alunos.status}"></td>  
+					<td class="btn-td-listAluno">
+						<a class="btn btn-primary btn-listAluno" th:href="@{alterar/{id}(id=${alunos.id})}">
+							<i class="fas fa-edit"></i> Editar</a>
+							<a class="btn btn-danger btn-listAluno" th:href="@{excluir/{id}(id=${alunos.id})}">
+							<i class="fas fa-times"></i> Excluir</a>
+					</td>
                 </tr>
             </tbody>
 
