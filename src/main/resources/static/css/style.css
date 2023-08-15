@@ -108,6 +108,29 @@ a{
     margin: 0 auto;
     text-align: center;
 }
+.btn-filtroAluno{
+    margin-top: 10px; 
+    width: 100px;
+    padding: 5px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 14px;
+      color: black;
+}
+.container-alunos{
+    width: 100%;
+    display: flex;
+    gap: 50px;
+}
+.btn-pesquisa{
+    padding: 0;
+    border: 1px solid #2068A3;
+    color: #144063;
+    width: 150px;
+    height: 30pxpx; /* Ajuste a altura para um valor mais visível */
+    text-align: center;
+
+}
 /* RESPONSIVIDADE */
 @media Screen and (max-width: 667px){
     .wm{

@@ -11,6 +11,8 @@ import org.springframework.web.servlet.ModelAndView;
 import br.com.course.academy.dao.AlunoDAO;
 import br.com.course.academy.model.Aluno;
 import jakarta.validation.Valid;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 @Controller
 public class AlunoController {
@@ -65,6 +67,43 @@ public class AlunoController {
 		 mv.setViewName("redirect:/alunos-adicionados");
 		 return mv;
 	  }
+
+	  @GetMapping("filtro-alunos")
+	   public ModelAndView filtroAlunos(Aluno aluno) {
+		  ModelAndView mv = new ModelAndView();
+		  mv.setViewName("aluno/filtroAlunos");	
+		 return mv;
+	  }
+	  
+	  
+	  @GetMapping("alunos-ativos")
+	 public ModelAndView listaAlunosAtivos() {
+		 ModelAndView mv = new ModelAndView();
+		 mv.setViewName("aluno/alunos-ativos");
+		 mv.addObject("alunosAtivos", alunoRepositorio.findByStatusAtivos());
+		return mv;
+	 }
+	  @GetMapping("alunos-inativos")
+		 public ModelAndView listaAlunosInativos() {
+			 ModelAndView mv = new ModelAndView();
+			 mv.setViewName("aluno/alunos-inativos");
+			 mv.addObject("alunosInativos", alunoRepositorio.findByStatusInativos());
+			return mv;
+		 }
+	  @GetMapping("alunos-cancelados")
+		 public ModelAndView listaAlunosCancelados() {
+			 ModelAndView mv = new ModelAndView();
+			 mv.setViewName("aluno/alunos-cancelados");
+			 mv.addObject("alunosCancelados", alunoRepositorio.findByStatusCancelados());
+			return mv;
+		 }
+	  @GetMapping("alunos-trancados")
+		 public ModelAndView listaAlunosTrancados() {
+			 ModelAndView mv = new ModelAndView();
+			 mv.setViewName("aluno/alunos-trancados");
+			 mv.addObject("alunosTrancados", alunoRepositorio.findByStatusTrancados());
+			return mv;
+		 }
 	  
     
 }

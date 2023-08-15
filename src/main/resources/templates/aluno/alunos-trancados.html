@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="Author" content="RobertoCarvalho" >
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/006642858d.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <title>List Alunos</title>
+</head>
+<body>
+    <div th:replace="fragmentos/fragmentos :: cabecalho"></div>
+    <div class="container" style="margin-top: 50px;">
+        <h3>Ultimos Alunos Adicionados Trancados</h3>
+        <hr>
+        <br>
+        <table class="table table-bordered table-hover">
+            <thead>
+                <th scope="col">Nome</th>
+                <th scope="col">Curso</th>
+                <th scope="col">Matricula</th>
+                <th scope="col">Status</th>
+                <th scope="col">Ação</th>
+            </thead>
+            <tbody>
+                <tr scope="row" th:each="alunos : ${alunosTrancados}">
+					<td th:text="${alunos.nome}"></td>
+					<td th:text="${alunos.curso}"></td>
+					<td th:text="${alunos.matricula}"></td>
+					<td th:text="${alunos.status}"></td>  
+					<td class="btn-td-listAluno">
+						<a class="btn btn-primary btn-listAluno" th:href="@{alterar/{id}(id=${alunos.id})}">
+							<i class="fas fa-edit"></i> Editar</a>
+							<a class="btn btn-danger btn-listAluno" th:href="@{excluir/{id}(id=${alunos.id})}">
+							<i class="fas fa-times"></i> Excluir</a>
+					</td>
+                </tr>
+            </tbody>
+
+        </table>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+
+</html>
