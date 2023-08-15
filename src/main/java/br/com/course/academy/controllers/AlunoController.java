@@ -2,6 +2,7 @@ package br.com.course.academy.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -9,6 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import br.com.course.academy.dao.AlunoDAO;
 import br.com.course.academy.model.Aluno;
+import jakarta.validation.Valid;
 
 @Controller
 public class AlunoController {
@@ -26,10 +28,16 @@ public class AlunoController {
 
 
 	 @PostMapping("InsertAlunos")
-	 public ModelAndView inserirAluno(Aluno aluno){
+	 public ModelAndView inserirAluno(@Valid Aluno aluno,BindingResult br ){
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("redirect:/alunos-adicionados");
-		alunoRepositorio.save(aluno);
+		if(br.hasErrors()) {
+			mv.setViewName("aluno/formAluno");
+			mv.addObject("aluno");
+		}else {
+			mv.setViewName("redirect:/alunos-adicionados");
+			alunoRepositorio.save(aluno);
+		}
+		
 		return mv;
 	 }
 

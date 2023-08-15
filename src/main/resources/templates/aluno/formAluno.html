@@ -21,6 +21,9 @@
              <!-- nome -->
             <div class="row">
                 <div class="col-md-6 form-group offset-md-3">
+					<div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('nome')}")>
+						<label class="validation-message" th:errors="*{nome}"></label>
+					</div>
                     <label>Nome do Aluno:</label>
                     <input class="form-control" placeholder="Ex: Roberto de Carvalho" th:field="*{nome}">
                 </div>
@@ -29,6 +32,9 @@
             <!-- curso -->
             <div class="row">
                 <div class="col-md-6 form-group offset-md-3">
+					<div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('curso')}")>
+						<label class="validation-message" th:errors="*{curso}"></label>
+					</div>
                     <label>Selecione o Curso:</label>
                     <select class="form-control" th:field="*{curso}">
                             <!-- each= iteração atravez do thymeleaf -->
@@ -45,6 +51,9 @@
               <!-- matricula -->
               <div class="row">
                 <div class="col-md-6 form-group offset-md-3">
+					<div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('matricula')}")>
+						<label class="validation-message" th:errors="*{matricula}"></label>
+					</div>
                     <label>Gerar Matricula</label>
                     <input class="form-control" th:field="*{matricula}" id="matricula">
                     <button type="button" onclick="GerarMatricula()" class="btn btn-dark btn-matricula" >Gerar</button>
@@ -54,6 +63,9 @@
             <!-- status -->
             <div class="row">
                 <div class="col-md-6 form-group offset-md-3">
+					<div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('status')}")>
+						<label class="validation-message" th:errors="*{status}"></label>
+					</div>
                     <label>Selecione o Status:</label>
                     <select class="form-control" th:field="*{status}">
                         <option th:each="status : ${T(br.com.course.academy.Enuns.Status).values()}" th:value="${status}" th:text="${status}"></option>
