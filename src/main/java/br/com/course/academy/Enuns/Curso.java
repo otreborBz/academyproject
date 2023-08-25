@@ -2,11 +2,11 @@ package br.com.course.academy.Enuns;
 
 public enum Curso {
 	
-	ADMISTRACAO("Admistração"),
-	INFORMATICA("Informatica"),
-	CONTABILIDADE("Contabilidade"),
-	PROGRAMACAO("Programação"),
-	ENFERMAGEM("Enfermagem");
+	ADMISTRACAO("ADMINISTRACAO"),
+	INFORMATICA("INFORMATICA"),
+	CONTABILIDADE("CONTABILIDADE"),
+	PROGRAMACAO("PROGRAMACAO"),
+	ENFERMAGEM("ENFERMAGEM");
 	
 	private String curso;
 

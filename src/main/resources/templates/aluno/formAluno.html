@@ -63,11 +63,11 @@
             <!-- status -->
             <div class="row">
                 <div class="col-md-6 form-group offset-md-3">
-					<div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('status')}")>
+					<div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('status')}">
 						<label class="validation-message" th:errors="*{status}"></label>
 					</div>
                     <label>Selecione o Status:</label>
-                    <select class="form-control" th:field="*{status}">
+                    <select class="form-control" th:field="*{status}" id="selecaoStatus">
                         <option th:each="status : ${T(br.com.course.academy.Enuns.Status).values()}" th:value="${status}" th:text="${status}"></option>
                     </select>
                 </div>
@@ -75,7 +75,7 @@
             
             <!-- Botões  -->
             <div class="row">
-                <button type="submit" class="btn btn-success offset-md-3 btn-submit">SALVAR</button>
+                <button type="submit" class="btn btn-success offset-md-3 btn-submit" id="btnSalvar">SALVAR</button>
                 <!-- espaçamentos entre os botões -->
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <a class="btn btn-outline-danger">VOLTAR</a>

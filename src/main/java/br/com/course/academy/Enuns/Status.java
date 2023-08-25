@@ -2,10 +2,10 @@ package br.com.course.academy.Enuns;
 
 public enum Status {
 	
-	ATIVO("Ativo"),
-	INATIVO("Inativo"),
-	TRANCADO("Trancado"),
-	CANCELADO("Cancelado");
+	ATIVO("ATIVO"),
+	INATIVO("INATIVO"),
+	TRANCADO("TRANCADO"),
+	CANCELADO("CANCELADO");
 	
 	private String status;
 

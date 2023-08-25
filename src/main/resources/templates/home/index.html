@@ -19,18 +19,40 @@
       <h1 class="texto-center">Sistemas de Gerenciamento de Alunos</h1>
       <div class="botoes">
         <div class="wm">
-          <h5 class="btn">CADASTRAR ALUNO</h5> 
+          <a th:href="@{/inserirAlunos}" ><h5 class="btn" >CADASTRAR ALUNO</h5></a>          
         </div>
         <div class="wm">
-          <h5 class="btn justify-content-center">ENCONTRAR ALUNO</h5>
+          <a th:href="@{filtro-alunos}"><h5 class="btn justify-content-center" >ENCONTRAR ALUNO</h5></a>
         </div>
         <div class="clear"></div>
       </div>
     </div>
   </section>
   
-<!-- th referece a thymeleaf onde ele vai entrar na pasta fragmentos, pegar o arquivo fragmentos e buscar 
-o pedaco do codigo que ele vai copiar que neste caso é o rodape  -->
+  <!--incio do modal-->
+  <div class="modal fade" id="modalPesquisa">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Encontre um Aluno</h5>
+          <button type="button" class="close" data-dismiss="modal">
+            <span>&times;</span>
+          </button>
+        </div>
+        <form method="post" action="pesquisar-aluno" th:object="${aluno}"> 
+          <div class="modal-body">
+            <input type="text" th:field="*{nome}" class="form-control" placeholder="Digite o nome do Aluno">
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-danger" data-dismiss="modal">Fechar</button>
+            <button type="submit" class="btn btn-success">Pesquisar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+<!-- th referece a thymeleaf onde ele vai entrar na pasta fragmentos, pegar o arquivo fragmentos e buscar o pedaco do codigo que ele vai copiar que neste caso é o rodape  -->
   <div th:replace="fragmentos/fragmentos :: rodape"></div>
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

@@ -10,15 +10,17 @@ import br.com.course.academy.model.Aluno;
 
 public interface AlunoDAO extends JpaRepository<Aluno, Integer> {
 
-	@Query("select r from Aluno r where r.status = 'ATIVO'")
+	@Query("select r from Aluno r where r.status = 'ATIVO' ")
 	public List<Aluno>findByStatusAtivos();
 	
 	@Query("select r from Aluno r where r.status = 'INATIVO' ")
 	public List<Aluno>findByStatusInativos();
+
+	@Query("select r from Aluno r where r.status = 'TRANCADO' ")
+	public List<Aluno>findByStatusTrancados();
 	
-	@Query("select r from Aluno r where r.status = 'CANCELADO'")
+	@Query("select r from Aluno r where r.status = 'CANCELADO' ")
 	public List<Aluno>findByStatusCancelados();
 	
-	@Query("select r from Aluno r where r.status = 'TRANCADO'")
-	public List<Aluno>findByStatusTrancados();
+	public List<Aluno>findByNomeContainingIgnoreCase(String nome);
 }

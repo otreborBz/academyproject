@@ -15,9 +15,9 @@
         <h4>Encontrar Alunos</h4>
         <hr>
         <br>
-        <form  method="post">
+        <form  method="post" action="pesquisar-aluno" th:object="${aluno}">
             <div class="input-group col-6 offset-3">
-                <input type="text" class="form-control" placeholder="Busque por o nome do Aluno...">
+                <input type="text" th:field="*{nome}" class="form-control" placeholder="Busque por o nome do Aluno...">
                 <div class="input-group-append">
                     <button type="submit" class="btn btn-outline-secondary btn-pesquisa">Pesquisar</button>
                 </div>

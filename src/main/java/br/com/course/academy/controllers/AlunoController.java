@@ -1,17 +1,22 @@
 package br.com.course.academy.controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import br.com.course.academy.Enuns.Status;
 import br.com.course.academy.dao.AlunoDAO;
 import br.com.course.academy.model.Aluno;
 import jakarta.validation.Valid;
-import org.springframework.web.bind.annotation.RequestParam;
+
+
 
 
 @Controller
@@ -39,7 +44,6 @@ public class AlunoController {
 			mv.setViewName("redirect:/alunos-adicionados");
 			alunoRepositorio.save(aluno);
 		}
-		
 		return mv;
 	 }
 
@@ -55,7 +59,7 @@ public class AlunoController {
 	  public ModelAndView alterar(@PathVariable("id") Integer id) {
 		  ModelAndView mv = new ModelAndView();
 		  mv.setViewName("aluno/alterar");
-		  Aluno aluno = alunoRepositorio.getOne(id);
+		  Aluno aluno = alunoRepositorio.findById(id).orElse(null);
 		  mv.addObject("aluno", aluno);
 		  return mv;
 	  }
@@ -104,6 +108,20 @@ public class AlunoController {
 			 mv.addObject("alunosTrancados", alunoRepositorio.findByStatusTrancados());
 			return mv;
 		 }
+	  
+	  @PostMapping("pesquisar-aluno")
+	  public ModelAndView pesquisaraluno(@RequestParam(required=false) String nome) {
+		  ModelAndView mv = new ModelAndView();
+		  List<Aluno> listaAlunos;
+		  if(nome == null || nome.trim().isEmpty()) {
+			  listaAlunos = alunoRepositorio.findAll();
+		  }else {
+			  listaAlunos = alunoRepositorio.findByNomeContainingIgnoreCase(nome);
+		  }
+		  mv.addObject("ListaDeAlunos", listaAlunos);
+		  mv.setViewName("aluno/pesquisa-resultado");		  
+		 return mv;
+	  }
 	  
     
 }
