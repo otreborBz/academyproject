@@ -10,6 +10,10 @@
     <title>Projeto Academy</title>
 </head>
 <body>
+	<div style="margin: 0; text-align: center;" class="alert alert-warning alert-dismissible fade show" role="alert">
+		<strong>Seja bem vindo: <span th:text="${session.usuarioLogado.user"></span></strong> You should check in on some of those fields below.
+		<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+	</div>
   <!-- fragmento cabeçalho -->
   <div th:replace="fragmentos/fragmentos :: cabecalho"></div>
   

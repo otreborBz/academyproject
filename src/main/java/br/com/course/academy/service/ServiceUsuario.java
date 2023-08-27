@@ -20,7 +20,7 @@ public class ServiceUsuario{
 	public void salvarUsuario(Usuario usuario) throws Exception {
 		try {
 			if(repositorioUsuario.findByEmail(usuario.getEmail()) != null) {
-				throw new EmailExistsException("Email ja cadastrado para o usuario: "+usuario.getUser());
+				throw new EmailExistsException("Email ja cadastrado para o usuario: "+ usuario.getUser());
 			}
 			usuario.setSenha(Util.md5(usuario.getSenha()));
 		} catch (NoSuchAlgorithmException e) {
@@ -29,6 +29,11 @@ public class ServiceUsuario{
 		repositorioUsuario.save(usuario);
 	}
 
-	
+	public Usuario loginUser(String user, String senha) throws ServiceExc{
+		Usuario userLogin = repositorioUsuario.buscarLogin(user, senha);
+		return userLogin;
+	}
+
+
 
 }
