@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import br.com.course.academy.Enuns.Status;
 import br.com.course.academy.dao.AlunoDAO;
 import br.com.course.academy.model.Aluno;
 import jakarta.validation.Valid;
