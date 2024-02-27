@@ -36,6 +36,7 @@
 <pre><code>git clone https://github.com/otreborBz/academyproject</code></pre>
 
 <ol start="2">
+    <li>Crie um banco de dados chamado 'academy'</li>
     <li>Abra o projeto em sua IDE preferida.</li>
     <li>Execute a aplicação.</li>
 </ol>
